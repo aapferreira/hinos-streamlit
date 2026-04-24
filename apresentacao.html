@@ -1,0 +1,67 @@
+
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body { margin:0; overflow:hidden; background:black; color:white; font-family:sans-serif; }
+            .slide {
+                width:100vw;
+                height:100vh;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                text-align:center;
+                position:absolute;
+                top:0;
+                left:0;
+                opacity:0;
+                transition: opacity 0.5s;
+            }
+            .slide.active { opacity:1; }
+            .titulo { font-size:48px; margin-bottom:40px; }
+            .conteudo { font-size:36px; line-height:1.6; }
+        </style>
+    </head>
+    <body>
+        
+        <section class="slide">
+            <div class="titulo">1. A ceia</div>
+            <div class="conteudo">A CEIA<br><br>MESA PREPARADA, CEIA ENSINADA,<br>CRISTO INSTRUINDO, MORTE APROXIMADA.<br><br>CORO:<br>ISTO É A CEIA, A CEIA DO SENHOR,<br>DADA EM MEMÓRIA DO SEU GRANDE AMOR.<br><br>ESTE PÃO, MEU CORPO, QUE POR VÓS FOI DADO,<br>SACRIFÍCIO ETERNO PARA SER LEMBRADO.<br><br>CORO:<br>ISTO É A CEIA, A CEIA DO SENHOR,<br>DADA EM MEMÓRIA DO SEU GRANDE AMOR.<br><br>SANGUE DERRAMADO, SUCO ABENÇOADO.<br>CRISTO ENTRISTECENDO PARA SER LEVADO.<br><br>CORO:<br>ISTO É A CEIA, A CEIA DO SENHOR,<br>DADA EM MEMÓRIA DO SEU GRANDE AMOR.<br></div>
+        </section>
+        
+        <section class="slide">
+            <div class="titulo">2. A Ele a glória</div>
+            <div class="conteudo">A ELE A GLÓRIA<br><br>PORQUE D'ELE E POR ELE<br>PARA ELE SÃO TODAS AS COISAS<br>PORQUE D'ELE E POR ELE<br>PARA ELE SÃO TODAS AS COISAS<br><br>CORO:<br>A ELE A GLÓRIA<br>A ELE A GLÓRIA<br>A ELE A GLÓRIA<br>PRA SEMPRE, AMÉM<br><br>QUÃO PROFUNDAS RIQUEZAS<br>O SABER E O CONHECER DE DEUS<br>QUÃO INSONDÁVEIS<br>SEUS JUÍZOS E SEUS CAMINHOS.<br><br>CORO:<br>A ELE A GLÓRIA<br>A ELE A GLÓRIA<br>A ELE A GLÓRIA<br>PRA SEMPRE, AMÉM<br></div>
+        </section>
+        
+
+        <script>
+            let index = 0;
+            const slides = document.querySelectorAll('.slide');
+
+            function showSlide(i) {
+                slides.forEach(s => s.classList.remove('active'));
+                slides[i].classList.add('active');
+            }
+
+            function next() {
+                if(index < slides.length - 1) index++;
+                showSlide(index);
+            }
+
+            function prev() {
+                if(index > 0) index--;
+                showSlide(index);
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'ArrowRight' || e.key === 'Enter') next();
+                if(e.key === 'ArrowLeft') prev();
+            });
+
+            showSlide(index);
+        </script>
+    </body>
+    </html>
+    
