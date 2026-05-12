@@ -101,7 +101,7 @@ contadores = carregar_contadores()
 
 st.title("📖 Gerador de Hinos")
 
-busca = st.text_input("🔍 Buscar hino")
+busca = st.text_input("🔍 Buscar hino...")
 
 hinos_filtrados = {
     nome: conteudo for nome, conteudo in hinos.items()
