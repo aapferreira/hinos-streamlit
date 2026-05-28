@@ -176,7 +176,7 @@ if gerar:
             conteudo = hinos[nome].upper().replace("\n", "<br>")
 
             st.markdown(f"""
-            <div style='font-size:30px; line-height:1.6;'>
+            <div style='font-size:32px; line-height:1.6;'>
                 <!--<b>{idx}. {nome}</b><br><br>-->
                 <b>{conteudo}</b>
             </div>
