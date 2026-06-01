@@ -60,7 +60,7 @@ def carregar_hinos():
     if not HINOS_DIR.exists():
         return hinos
 
-    for arquivo in sorted(HINOS_DIR.glob("*.txt")):
+    for arquivo in sorted(HINOS_DIR.glob("*.txt"), key=lambda p: p.stem.lower()):
         try:
             with open(arquivo, "r", encoding="utf-8") as f:
                 conteudo = f.read()
