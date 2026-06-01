@@ -55,12 +55,19 @@ init_db()
 # Funções
 # -----------------------------
 
+
+def chave_ordenacao(texto):
+    return ''.join(
+        c for c in normalize('NFD', texto.lower())
+        if ord(c) < 128
+    )
+
 def carregar_hinos():
     hinos = {}
     if not HINOS_DIR.exists():
         return hinos
 
-    for arquivo in sorted(HINOS_DIR.glob("*.txt"), key=lambda p: p.stem.lower()):
+    for arquivo in sorted(HINOS_DIR.glob("*.txt"), key=lambda p: chave_ordenacao(p.stem)):
         try:
             with open(arquivo, "r", encoding="utf-8") as f:
                 conteudo = f.read()
