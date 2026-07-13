@@ -129,7 +129,7 @@ for i, nome in enumerate(nomes):
 
     with col:
         st.checkbox(
-            f"{nome} ({contador})",
+            f"{nome}", #f"{nome} ({contador})",
             key=f"chk_{nome}",
             value=(nome in st.session_state.ordem),
             on_change=toggle_hino,
