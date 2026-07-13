@@ -116,8 +116,10 @@ hinos_filtrados = {
 }
 
 st.subheader("Selecione os hinos")
-st.text("Os hinos serão mostrados na ordem em que forem selecionados.\n" \
-"A ordem poderá ser reajustada posteriormente.")
+st.text("Os hinos serão mostrados na ordem em que forem selecionados (clicados).\n" \
+"Basta escolher os hinos desejados, rolar a página e clicar no botão 'Gerar'\n" \
+"A ordem poderá ser reajustada na sessão 'Ajustar ordem (opcional), logo acima do botão 'Gerar'.\n" \
+"Os hinos serão gerados logo abaixo dos botões 'Gerar' e 'Limpar'.")
 
 # 3 colunas
 colunas = st.columns(3)
